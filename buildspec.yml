@@ -6,4 +6,4 @@ artifacts:
     - apigClient.js
     - scripts.js
     - style.css
-  discard-paths: yes
+  discard-paths: no
