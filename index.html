@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>AI Photo Search</title>
+</head>
+
+<body>
+    <h1>AI Photo Search</h1>
+
+    <!-- Search Section -->
+    <div>
+        <input type="text" id="searchQuery" placeholder="Search photos...">
+        <button onclick="searchPhotos()">Search</button>
+    </div>
+
+    <!-- Results Section -->
+    <div id="results"></div>
+
+    <!-- Upload Section -->
+    <div>
+        <h2>Upload Photo</h2>
+        <input type="file" id="photoUpload">
+        <input type="text" id="customLabels" placeholder="Enter custom labels, separated by commas">
+        <button onclick="uploadPhoto()">Upload</button>
+    </div>
+
+    <script src="scripts.js"></script>
+    <script type="text/javascript" src="lib/axios/dist/axios.standalone.js"></script>
+    <script type="text/javascript" src="lib/CryptoJS/rollups/hmac-sha256.js"></script>
+    <script type="text/javascript" src="lib/CryptoJS/rollups/sha256.js"></script>
+    <script type="text/javascript" src="lib/CryptoJS/components/hmac.js"></script>
+    <script type="text/javascript" src="lib/CryptoJS/components/enc-base64.js"></script>
+    <script type="text/javascript" src="lib/url-template/url-template.js"></script>
+    <script type="text/javascript" src="lib/apiGatewayCore/sigV4Client.js"></script>
+    <script type="text/javascript" src="lib/apiGatewayCore/apiGatewayClient.js"></script>
+    <script type="text/javascript" src="lib/apiGatewayCore/simpleHttpClient.js"></script>
+    <script type="text/javascript" src="lib/apiGatewayCore/utils.js"></script>
+    <script type="text/javascript" src="apigClient.js"></script>
+    <script>
+
+        var sdk = apigClientFactory.newClient({});
+  
+    </script>
+</body>
+
+</html>
