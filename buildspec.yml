@@ -2,7 +2,7 @@ version: 0.2
 artifacts:
   files:
     - index.html
-    - lib/*
+    - 'lib/**/*'
     - apigClient.js
     - scripts.js
     - style.css
