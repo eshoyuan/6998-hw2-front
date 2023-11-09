@@ -1,0 +1,8 @@
+artifacts:
+  files:
+    - index.html
+    - lib/*
+    - apigClient.js
+    - scripts.js
+    - style.css
+  discard-paths: yes
