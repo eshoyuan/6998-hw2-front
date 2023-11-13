@@ -58,15 +58,10 @@
             var SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecognition;
             recognition = new SpeechRecognition();
 
-            recognition.onstart = function() {
-                action.innerHTML = "<small>Listening</small>";
-            };
-
             recognition.onresult = function(event) {
                 var transcript = event.results[0][0].transcript;
 
                 searchQuery.value = transcript; 
-                action.innerHTML = "<small>Completed</small>";
             };
 
             recognition.start();
@@ -75,7 +70,6 @@
         function stopSpeechRecognition() {
             if (recognition) {
                 recognition.stop(); 
-                document.getElementById("action").innerHTML = "<small>Stop</small>";
             }
         }
     </script>

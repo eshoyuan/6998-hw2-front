@@ -8,17 +8,25 @@ function searchPhotos() {
         }
     };
     sdk.searchGet(
-        params ={q: query},
-        body = {},
-        additionalParams=additionalParams
-        ).then(response => {
-        // let resultsDiv = document.getElementById('results');
-        // resultsDiv.innerHTML = '';
+        {q: query},
+        {},
+        additionalParams
+    ).then(response => {
+        let resultsDiv = document.getElementById('results');
+        resultsDiv.innerHTML = ''; // Clear previous results
         console.log(response)
+        let urls =response.data;
+        urls.forEach(url => {
+            let img = document.createElement('img');
+            img.src = url;
+            img.style = 'max-width: 100%; height: auto;'; // Style as needed
+            resultsDiv.appendChild(img);
+        });
     }).catch(error => {
         console.error('Error searching photos:', error);
     });
 }
+
 
 function uploadPhoto() {
     let fileInput = document.getElementById('photoUpload');
