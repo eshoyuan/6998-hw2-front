@@ -16,6 +16,10 @@ function searchPhotos() {
         resultsDiv.innerHTML = ''; // Clear previous results
         console.log(response)
         let urls =response.data;
+        if (urls.length === 0) {
+            resultsDiv.innerHTML = 'No results found.';
+            return;
+        }
         urls.forEach(url => {
             let img = document.createElement('img');
             img.src = url;
