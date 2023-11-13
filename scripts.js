@@ -1,10 +1,19 @@
 function searchPhotos() {
     let query = document.getElementById('searchQuery').value;
-    sdk.searchGet({
-        q: query
-    }).then(response => {
-        let resultsDiv = document.getElementById('results');
-        resultsDiv.innerHTML = '';
+    var additionalParams = {
+        headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Headers': '*',
+            'Access-Control-Allow-Methods': '*',
+        }
+    };
+    sdk.searchGet(
+        params ={q: query},
+        body = {},
+        additionalParams=additionalParams
+        ).then(response => {
+        // let resultsDiv = document.getElementById('results');
+        // resultsDiv.innerHTML = '';
         console.log(response)
     }).catch(error => {
         console.error('Error searching photos:', error);
@@ -26,14 +35,14 @@ function uploadPhoto() {
     reader.onloadend = function () {
         let base64 = reader.result.replace(/^data:.+;base64,/, ''); // 去掉 Base64 编码前的文件信息
         let time = getCurrentDateTime();
-        let body = JSON.stringify({
+        let body = {
             base64: base64,
             customLabels: customLabels,
             uploadTime: time,
             filename: file.name,
-        });
+        };
         console.log(body);
-        sdk.imageuploadPut({},body,{})
+        sdk.imageUploadPut({},body,{})
         .then(function(result) {
             console.log('Image uploaded:', result);
         })
