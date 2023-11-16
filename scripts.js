@@ -5,6 +5,7 @@ function searchPhotos() {
             'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Headers': '*',
             'Access-Control-Allow-Methods': '*',
+            "x-api-key": "kUFaOeXCAd4ZjUCZp3vjM9I2HitowqQw5fg54CpQ",
         }
     };
     sdk.searchGet(
