@@ -53,7 +53,7 @@ apigClientFactory.newClient = function (config) {
 
     
     // extract endpoint and path from url
-    var invokeUrl = 'https://uj3620jscd.execute-api.us-east-1.amazonaws.com/Dev-final-1';
+    var invokeUrl = 'https://vm7tdsckrj.execute-api.us-east-1.amazonaws.com/Dev-demo';
     var endpoint = /(^https?:\/\/[^\/]+)/g.exec(invokeUrl)[1];
     var pathComponent = invokeUrl.substring(endpoint.length);
 
